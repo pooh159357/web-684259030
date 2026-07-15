@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(177, 177, 177, 0.527);
+    line-height: 1.6;
+}
+
+footer,
+.hero,
+.card,
+.tip-box{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: aliceblue;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+header {
+ background: linear-gradient(90deg, #003c9e, #006eff);
+ color: white;
+ padding: 18px 60px;
+ box-shadow: 0 4px 8px;
+
+
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+}
+.brand-icon{font-size: 50px;}
+.brand-text p {font-size: 14px;}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left :20px; 
+    
+}
+nav a:hover{
+    text-decoration: underline;
+}
+.hero {
+ padding: 45px 70px 25px;
+ display: flex;
+ align-items: center;
+ gap: 24px;
+}
+
+
+
+
+.container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+
+    background-color: aqua;
+}
+
+
+.card-grid {
+ display: grid;
+ grid-template-columns: 1fr 1.05fr 1fr;
+ gap: 25px;
+}
+.card-header {
+ padding: 18px 22px;
+ border-bottom: 1px solid #dbeafe;
+ background: #f8fbff;
+ font-size: 20px;
+ font-weight: bold;
+ color: #005bea;
+}
+.card-body {
+ padding: 22px;
+}
+.card {
+ background: white;
+ border-radius: 18px;
+ border: 1px solid #dbeafe;
+ box-shadow: 0 8px 22px rgba(15, 47, 117, 0.08);
+ overflow: hidden;
+}
