@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Krub';
+  background-color: rgb(179, 228, 88);
+
+  color: rgb(24, 20, 20);
+
+  line-height: 1.6;
+}
+
+.container{
+  /*border: 1px solid rgb(46, 43, 214);
+  padding: 15px;
+  margin: 15px;*/
+}
+
+/*=================================================================  
+        Header Section
+==================================================================*/
+
+.site-header{
+  /*border: 1px solid rebeccapurple;
+  padding: 15px;
+  margin: 15px;*/
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(110deg,rgb(35, 231, 150),rgb(27, 224, 103));
+
+  padding: 8px 20px;
+
+
+}
+
+.brand{
+  /*border: 1px solid rgb(58, 207, 162);
+  padding: 15px;
+  margin: 15px;*/
+  
+  
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: white;
+}
+
+.brand-logo{
+  
+  background-color: brown;
+
+  border-radius: 50%;
+
+  font-size: 30px;
+
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.brand-text h2 {
+  font-size: 24px;
+  
+}
+
+.brand-text p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* navbar*/
+
+.main-nav{
+ /* border: 1px solid rgb(58, 207, 162);
+  padding: 15px;
+  margin: 15px; */
+}
+
+.nav-list{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+.nav-list a{
+  color: white;
+  text-decoration: none;
+
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.8s;
+}
+.nav-list a:hover {
+  background-color: rgba(252, 252, 252, 0.26);
+  
+  
+}
+
+/*=================================================================  
+        main Section
+==================================================================*/
+.main-layout{
+  /*border: 1px solid rebeccapurple;
+  padding: 15px;
+  margin: 15px;*/
+
+  display: grid;
+/* grid-template-columns: 80% 20% ;*/
+  grid-template-columns: 1fr 390px ;
+  padding: 20px 22px;
+}
+
+/* leftcontent*/
+.left-content {
+  /*border: 1px solid rgb(26, 156, 231);
+  padding: 15px;
+  margin: 15px;*/
+}
+
+.hero{
+ /* border: 1px solid rgb(58, 207, 162);
+  padding: 15px;
+  margin: 15px;*/
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+
+  padding: 26px 36px;
+  background: linear-gradient(90deg,rgb(215, 226, 250),rgb(61, 61, 197));
+  border-radius: 15px;
+  box-shadow: 0 4px 8px black;
+
+  align-items: center;
+  
+}
+.hero-text h1{
+font-size: 36px;
+color: rgb(209, 49, 27);
+line-height: 1.8;
+
+}
+.hero-text p{
+font-size: 21px;
+color: rgb(231, 71, 50);
+font-weight: 600;
+
+}
+
+.hero-photo img {
+  width: 400px;
+  height: 200px;
+  border: 3px solid rgb(40, 147, 247);
+
+  box-shadow: 0 4px 8px black;
+  object-fit: cover;
+  border-radius: 10px;
+
+
+   /*
+    object-fit: contain ➡️เห็นภาพครบ รักษาสัดส่วน (อาจมีขอบว่าง)
+    object-fit: fill ➡️ยืดภาพให้เต็มกล่อง ภาพอาจบิด (สัดส่วนเพี้ยน)
+    object-fit: cover ➡️ครอปภาพให้เต็มกล่อง รักษาสัดส่วน บางส่วนของภาพจะถูกตัดออก
+    */
+
+}
+
+.card{
+  border: 1px solid rgb(58, 207, 162);
+  padding: 15px;
+  margin: 15px;
+}
+
+
+/* right sidebar*/
+.right-sidebar {
+  border: 1px solid rgb(245, 62, 123);
+  padding: 15px;
+  margin: 15px;
+}
+.side-card{}
+
+.submit-card{}
+
+
+
+
+/*=================================================================  
+        Footer Section
+==================================================================*/
+.tip-box{
+  border: 1px solid rebeccapurple;
+  padding: 15px;
+  margin: 15px;
+}
+
+
+
+
+
