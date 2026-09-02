@@ -3,59 +3,145 @@
 <meta charset="UTF-8">
 <meta name="vlewport" content="width-device-width,intial-scale-1.0">
 <meta name="description" content="Learning about HTML">
+<link rel="stylesheet" href="index.html">
 <title>HTML Tutorial:684259030</title>
-<!--Internal css-->
 <style>
-    html {
-        scroll-behavior: smooth;
-    }
+:root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --code-bg: #1e293b;
+            --code-text: #38bdf8;
+            --border-color: #e2e8f0;
+        }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: rgb(241, 165, 51);
-        margin: 50px;
+        html {
+            scroll-behavior: smooth;
+        }
 
-        line-height: 1.5;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
 
-    h1 {
-        color: rgb(255, 34, 218);
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-        text-align: center;
-    }
+        h1 {
+            color: #0f172a;
+            text-align: center;
+            font-size: 2.25rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
 
-    h2 {
-        color: rgb(255, 34, 218);
-    }
+        h2 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
 
-    pre {
-        background-color: rgb(242, 255, 59);
-        padding: 10px;
-        border-left: 4px solid #000000;
-        white-space: pre-wrap;
-        font-size: 16px;
-    }
+        /* ตกแต่งส่วน Topics แบบช่องแนวนอน (Grid Layout) */
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            padding: 0;
+            list-style: none;
+            margin-top: 15px;
+        }
 
-    a {
-        text-decoration: none;
-    }
+        .topics-list li a {
+            display: block;
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
 
-    a:hover {
-        color: red;
+        .topics-list li a:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 18px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.875rem;
+            color: #64748b;
+            background-color: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        .back-to-top:hover {
+            background-color: #e2e8f0;
+            color: var(--text-color);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
 
         .text-center {
-            text-decoration: underline;
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
         }
-    }
 </style>
-<div>
+<body>
+<div class="conrainer">
     <h1 id="top">HTML Tutorial</h1>
     <hr>
     <p>Welcome to the HTML tutorial. Click on the topics below to start learning:
         Topics</p>
     <!--topics -->
     <h2>Topics</h2>
-    <ul>
+    <ul class="topics-list">
         <li><a href="#Introduction">Introduction to HTML</a></li>
         <li><a href="#Structure">HTML Document Structure</a></li>
         <li><a href="#Heading">Heading</a></li>
@@ -84,7 +170,7 @@
 content of web pages
 - HTML is not a programming language, but a markup language
     </pre>
-    <a href="#top">Back to top</a>
+    <a href="#top" class="back-to-top">Back to top</a>
     <!--content-->
     <h2 id="Structure">HTML Document Structure
     </h2>
@@ -104,7 +190,7 @@ content of web pages
 ตัวอย่าง: &lt;h1>Hello, World!&lt;/h1>
 &lt;img src="image.jpg" alt="A description of the image">
     </pre>
-    <a href="#Structure">Back to top</a>
+    <a href="#top" class="back-to-top">Back to top</a>
 
     <!--content Heading-->
     <h2 id="Heading">Heading</h2>
@@ -117,7 +203,7 @@ content of web pages
     - &lt;h5&gt;: Heading 5
     - &lt;h6&gt;: Heading 6
     </pre>
-    <a href="#Heading">Back to top</a>
+    <a href="#top" class="back-to-top">Back to top</a>
     <!--content Paragraph-->
     <h2 id="Paragraph">Paragraph</h2>
     <p>workshop
@@ -154,7 +240,7 @@ content of web pages
     - &lt;q&gt;: Inline quotation
     - &lt;code&gt;: Code snippet
     </pre>
-    <a href=" #top">Back to top</a>
+    <a href="#top" class="back-to-top">Back to top</a>
     <!--content Creating Links-->
     <h2 id="Creating Links">Creating Links</h2>
     <a href="W06-01-link-image.html">Workshop 1</a>
@@ -224,7 +310,7 @@ content of web pages
     - Example: &lt;ol style="list-style-type: upper-roman;"&gt;
     - Example: &lt;ol style="list-style-type: lower-roman;"&gt;
     </pre>
-        <a href="#Lists (Ordered and Unordered)">Back to top</a>
+        <a href="#top" class="back-to-top">Back to top</a>
         <!--content Adding Images -->
         <h2 id="Adding Images">Adding Images</h2>
         <p>workshop
@@ -268,7 +354,7 @@ content of web pages
         object-fit: cover;
         }
     </pre>
-        <a href="#Adding Images">Back to top</a>
+        <a href="#top" class="back-to-top">Back to top</a>
         <!--content Creating Tables-->
         <h2 id="Creating Tables">Creating Tables</h2>
         <p>Workshop 1
@@ -279,7 +365,7 @@ content of web pages
     - &lt;th&gt;: Table header
     - &lt;td&gt;: Table data/cell
     </pre>
-        <a href="#Creating Tables">Back to top</a>
+        <a href="#top" class="back-to-top">Back to top</a>
         <!--content HTML Forms-->
         <h2 id="HTML Forms">HTML Forms</h2>
         <p>HTML forms are defined with the &lt;form&gt; tag...</p>
@@ -314,7 +400,7 @@ content of web pages
     - การสง่ ขอ้มลู ไปยังเซริฟ์ เวอร์
     - การใช ้JavaScript (เชน่ onsubmit)
     </pre>
-        <a href="#HTML Forms">Back to top</a>
+        <a href="#top" class="back-to-top">Back to top</a>
         <!--content Semantic HTML-->
         <h2>Semantic HTML</h2>
         <p>Semantic HTML elements clearly define the content of a web page...
@@ -326,46 +412,13 @@ content of web pages
     - &lt;aside&gt;: Defines content aside from the page content
     - &lt;footer&gt;: Defines a footer for a document or section
     </pre>
-        <a href="#Semantic HTML">Back to top</a>
-        <!--content-->
-        <h2>xd</h2>
-        <pre>
-    </pre>
-        <a href="#">Back to top</a>
-        <a href="#top">back to Top</a>
+        <a href="#top" class="back-to-top">Back to top</a>
         <hr>
 
         <div class="text-align:center">
             <a href="https://www.w3schools.com/html/default.asp">Learn more about HTML</a>
             <p>&copy;2026 Create by :6842589030:Vachiravit chuanchom</p>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </body>
+    </body>
 
 </html>
