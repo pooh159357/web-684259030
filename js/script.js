@@ -125,27 +125,10 @@ const icons = {
     heart: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>',
     info: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>'
 };
-// =============================================
-// (1) เริ่มต้น
-// =============================================
-
-// โค้ดส่วนนี้ทำหน้าที่ รอให้โครงสร้าง HTML โหลดเสร็จก่อน แล้วจึงแสดงหมวดหมู่ แสดงข้อมูลสัตว์เลี้ยง และเตรียมฟอร์มให้ตอบสนองเมื่อผู้ใช้กดส่งข้อมูล
 
 
-// document หมายถึงเอกสาร HTML ของหน้าเว็บ
-// addEventListener() ใช้กำหนดให้โปรแกรมรอเหตุการณ์บางอย่าง
-// 'DOMContentLoaded' คือเหตุการณ์ที่เกิดขึ้นเมื่อเบราว์เซอร์อ่านและสร้างโครงสร้าง HTML หรือ DOM เสร็จแล้ว
-// function() { ... } คือฟังก์ชันที่จะทำงานเมื่อเหตุการณ์นั้นเกิดขึ้น
 
-document.addEventListener('DOMContentLoaded', function() {
-    // รอให้โครงสร้าง HTML โหลดเสร็จ
-    // เมื่อโครงสร้าง HTML พร้อมใช้งานแล้ว ให้ทำคำสั่งทั้งหมดที่อยู่ภายในฟังก์ชันนี้  
-    // เรียก renderCategories() เพื่อแสดงหมวดหมู่
-    // เรียก renderPets() เพื่อแสดงรายการสัตว์เลี้ยง
- 
- 
-});
- 
+
  
  
  
@@ -189,7 +172,7 @@ function renderCategories() {
     categoryFilter.innerHTML = categories.map(category => `
         <button
         class="category-btn ${selectedCategory === category.value ? 'active' : ''}"
-        onclick="selectCategory('${category.value}')"
+        onclick="selectCategory('${category.value}', this)"
         >
         <span>${category.icon}</span>
         <span>${category.name}</span>
@@ -241,12 +224,33 @@ function renderCategories() {
 // class="category-btn ${selectedCategory === category.value ? 'active' : ''}"
 // 4) เรียกฟังก์ชัน renderPets() เพื่อกรองและแสดงสัตว์ตามหมวดหมู่ที่เลือก
 
- function selectCategory(category) {
-     selectedCategory = category;
-     renderCategories();
-     renderPets();
- }
+//  function selectCategory(category) {
+//      selectedCategory = category;
+//      renderCategories();
+//      renderPets();
+//  }
 
+
+function selectCategory(category, button) {
+
+    // จำหมวดหมู่ที่เลือก
+    selectedCategory = category;
+
+    // เอา active ออกจากทุกเมนู
+    document.querySelectorAll('.navbar-nav .nav-link')
+        .forEach(item => {
+            item.classList.remove('active');
+        });
+
+    // เพิ่ม active ให้ปุ่มที่คลิก
+    button.classList.add('active');
+
+    // แสดงหมวดหมู่
+    renderCategories();
+
+    // แสดงสัตว์
+    renderPets();
+}   
  
 
 
@@ -362,6 +366,29 @@ function toggleDetails(petId) {
     }
 }
 
-  renderPets()
-  render
+
+
+
+
+// =============================================
+// (1) เริ่มต้น
+// =============================================
+
+// โค้ดส่วนนี้ทำหน้าที่ รอให้โครงสร้าง HTML โหลดเสร็จก่อน แล้วจึงแสดงหมวดหมู่ แสดงข้อมูลสัตว์เลี้ยง และเตรียมฟอร์มให้ตอบสนองเมื่อผู้ใช้กดส่งข้อมูล
+
+
+// document หมายถึงเอกสาร HTML ของหน้าเว็บ
+// addEventListener() ใช้กำหนดให้โปรแกรมรอเหตุการณ์บางอย่าง
+// 'DOMContentLoaded' คือเหตุการณ์ที่เกิดขึ้นเมื่อเบราว์เซอร์อ่านและสร้างโครงสร้าง HTML หรือ DOM เสร็จแล้ว
+// function() { ... } คือฟังก์ชันที่จะทำงานเมื่อเหตุการณ์นั้นเกิดขึ้น
+
+document.addEventListener('DOMContentLoaded', function() {
+    // รอให้โครงสร้าง HTML โหลดเสร็จ
+    // เมื่อโครงสร้าง HTML พร้อมใช้งานแล้ว ให้ทำคำสั่งทั้งหมดที่อยู่ภายในฟังก์ชันนี้  
+    // เรียก renderCategories() เพื่อแสดงหมวดหมู่
+    // เรียก renderPets() เพื่อแสดงรายการสัตว์เลี้ยง
+    renderCategories();
+    renderPets();
+
+});
  
